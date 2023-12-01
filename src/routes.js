@@ -1,9 +1,9 @@
 import React from 'react';
 import Home from './pages/Home';
+import { auth } from './auth/firebase';
 import NotFound from './pages/NotFound';
 import LoginScreen from './pages/LoginScreen';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { auth } from './auth/firebase';
 
 const PrivateRoute = ({ children }) => {
   const isLoggedIn = !!auth.currentUser;

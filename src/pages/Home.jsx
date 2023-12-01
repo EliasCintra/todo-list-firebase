@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Todo from './Todo';
+import Topbar from './Topbar';
 import Swal from 'sweetalert2';
 import { db } from '../auth/firebase';
 import { getAuth } from 'firebase/auth';
@@ -103,6 +104,7 @@ function Home() {
 
   return (
     <div className={style.bg}>
+      <Topbar/>
       <div className={style.container}>
         <h3 className={style.heading}>Lista de Tarefas</h3>
         <form onSubmit={createTodo} className={style.form}>
@@ -142,7 +144,7 @@ function Home() {
           ))}
         </ul>
         {tarefas.length < 1 ? null : (
-        <p className={style.count}>{`Você possui ${tarefas.length} tarefas.`}</p>
+          <p className={style.count}>{`Você possui ${tarefas.length} tarefas.`}</p>
         )}
       </div>
     </div>

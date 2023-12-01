@@ -10,12 +10,10 @@ const NotFound = () => {
           alt="not found"
           className="w-[500px]"
         />
-        <h1 className="font-bold text-3xl">Hmmm, pagina acessada não existe.</h1>
-        <p className="text-xl font-medium">
-          Voltar para pagina de Login.
-        </p>
+          <h1 className="font-bold text-2xl">Pagina acessada não existe.</h1>
+          <p className="text-xl font-medium">Voltar para pagina de Login.</p>
         <Link
-          className="px-6 py-2 my-3 text-lg bg-red-500 text-white font-medium rounded-lg"
+          className="px-6 py-2 my-3 text-lg bg-gray-200 dark:bg-dark-100 hover:bg-gray-300 hover:scale-110 transition-all py-2 px-4 flex items-center gap-2 rounded-lg font-medium"
           to="/login"
         >
           Login

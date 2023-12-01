@@ -1,18 +1,21 @@
 import React from "react";
 import Swal from "sweetalert2";
+import imagem from "../logo.png";
 import { auth } from "../auth/firebase";
+import { useUser } from "../auth/UserContext";
 import { useNavigate } from 'react-router-dom';
 import { FcGoogle as GoogleIcon } from "react-icons/fc";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import imagem from "../logo.png"
 
 const LoginScreen = () => {
+  const { setUser } = useUser();
   const navigate = useNavigate()
+  
   const handleGoogleLogin = async () => {
     try {
       const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
-      console.log(result.user.displayName)
+      setUser(result.user);
       navigate('/home', { replace: true })
     } catch (error) {
       Swal.fire('Erro ao fazer login com o Google:', error.message, "info");
